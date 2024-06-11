@@ -16,10 +16,8 @@ if [ "$process_count" -gt "$threshold_processes" ]; then
     echo "Nombre de processus actuels : $process_count"
 fi
 
-# Compter le nombre d'utilisateurs connectés
-user_count=$(who | awk '{print $1}' | sort | uniq | wc -l)
 
-# Vérifier s'il y a plus de 3 utilisateurs différents connectés
+user_count=$(who | awk '{print $1}' | sort | uniq | wc -l)
 threshold_users=3
 
 if [ "$user_count" -gt "$threshold_users" ]; then
